@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        h3{
+            font-size: 3rem;  
+            color: #1d7a41;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin: 20px;
+        }
+        .logo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+        h1 {
+            text-align: center;
+            color: #08692d;
+            margin-top: 20px;
+        }
+        .names {
+            text-align: center;
+            font-size: 16px;
+            color: #1d7a41;
+        }
+        nav {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        .nav1{
+            color: #1d7a41;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #0b7a23;
+        }
+        nav a:hover {
+            color: #101113;
+        }
+        hr {
+            border: 0;
+            border-top: 1px solid #ccc;
+            margin: 20px 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body> <div class="header">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Nec.png.jpg" alt="Logo" class="logo">
+    <h3> Deep Learning in Adolescent Obesity Prevention :
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  A path to Health 
+        </h3>
+        </div>
+    <p class="names">Team Members:&nbsp;&nbsp; 1. Srilatha Amireedy &nbsp;&nbsp; 2. Ch.Indravati &nbsp;&nbsp;3. S.Chandana </p>
+    <nav class="nav1">
+        <a href="/">Home</a> |
+        <a href="/about">About Project</a> |
+        <a href="/obesityRiskForm">ObesityRiskForm</a> |
+        <a href="/prediction">Predictions</a> |
+        <a href="/metrics">Model Evaluation Metrics</a> |
+        <a href="/flowchart">Project Flowchart</a>
+    </nav>
+    <hr>
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

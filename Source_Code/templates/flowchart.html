@@ -1,0 +1,212 @@
+{% extends "base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obesity Prediction - Project Flowchart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            color: #168b33;
+            margin-top: 20px;
+        }
+        h2{
+            color: #168b33;   
+        }
+        .flowchart {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px auto;
+            max-width: 900px;
+        }
+        .box {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+            width: 80%;
+            text-align: center;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        .box:hover {
+            background-color: #45a049;
+            transform: scale(1.02);
+            transition: all 0.3s ease;
+        }
+        .arrow {
+            width: 0; 
+            height: 0; 
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-top: 25px solid #333;
+            margin: 5px 0;
+        }
+        .description {
+            font-size: 14px;
+            color: #f9f9f9;
+            margin-top: 10px;
+            font-style: italic;
+        }
+        
+        section {
+            padding: 20px;
+            background-color: #fff;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        section h2 {
+            color: #333;
+            text-align: center;
+        }
+        .section-content {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Obesity Prediction - Project Flowchart</h1>
+
+  
+
+    <div class="flowchart">
+        <div class="box">
+            <strong>1. Data Collection</strong>
+            <div class="description">Gather data from medical records, fitness apps, and surveys to obtain attributes such as age, BMI, exercise habits, and dietary preferences.</div>
+        </div>
+        <div class="arrow"></div>
+        <div class="box">
+            <strong>2. Data Preprocessing</strong>
+            <div class="description">Clean the raw data by handling missing values, removing duplicates, and normalizing numerical features for consistency.</div>
+        </div>
+        <div class="arrow"></div>
+        <div class="box">
+            <strong>3. Feature Engineering</strong>
+            <div class="description">Select and engineer relevant features like calorie intake, physical activity, genetics, and lifestyle patterns.</div>
+        </div>
+        <div class="arrow"></div>
+        <div class="box">
+            <strong>4. Exploratory Data Analysis (EDA)</strong>
+            <div class="description">Analyze trends, correlations, and patterns in the data to understand relationships between features and obesity levels.</div>
+        </div>
+        <div class="arrow"></div>
+        <div class="box">
+            <strong>5. Model Selection</strong>
+            <div class="description">Choose machine learning models such as Decision Trees, Random Forests, or Neural Networks for prediction tasks.</div>
+        </div>
+        <div class="arrow"></div>
+        <div class="box">
+            <strong>6. Model Training</strong>
+            <div class="description">Train the model using a training dataset to learn patterns and relationships between features and obesity levels.</div>
+        </div>
+        <div class="arrow"></div>
+        <div class="box">
+            <strong>7. Model Evaluation</strong>
+            <div class="description">Evaluate the model using metrics like Accuracy, Precision, Recall, F1-score, and ROC-AUC to assess its performance.</div>
+        </div>
+        <div class="arrow"></div>
+        <div class="box">
+            <strong>8. Hyperparameter Tuning</strong>
+            <div class="description">Optimize the model's parameters using techniques like Grid Search or Random Search to improve performance.</div>
+        </div>
+        <div class="arrow"></div>
+        <div class="box">
+            <strong>9. Prediction</strong>
+            <div class="description">Use the trained model to predict obesity levels for new, unseen data inputs.</div>
+        </div>
+        <div class="arrow"></div>
+        <div class="box">
+            <strong>10. Deployment</strong>
+            <div class="description">Integrate the model into a user-friendly application or web-based interface for real-world usage.</div>
+        </div>
+        <div class="arrow"></div>
+        <div class="box">
+            <strong>11. Feedback & Iteration</strong>
+            <div class="description">Collect user feedback, monitor the system's performance, and periodically update the model for better accuracy.</div>
+        </div>
+    </div>
+    <section>
+        <h2>Introduction</h2>
+        <div class="section-content">
+            <p>Obesity has become a major health concern globally, leading to various chronic diseases. Predicting obesity levels based on multiple factors like genetics, lifestyle, diet, and physical activity can help individuals make informed decisions about their health. The goal of this project is to use machine learning models to predict obesity risk and help in early intervention strategies.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Data Sources</h2>
+        <div class="section-content">
+            <p>The data for this project is collected from various sources:</p>
+            <ul>
+                <li><strong>Medical Records:</strong> Patient health data, including height, weight, BMI, and other medical conditions.</li>
+                <li><strong>Fitness Apps:</strong> Data on physical activity, steps taken, calories burned, and exercise routines.</li>
+                <li><strong>Surveys:</strong> Survey data from individuals regarding their eating habits, sleep patterns, and general lifestyle.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Tools & Technologies</h2>
+        <div class="section-content">
+            <p>This project utilizes several tools and technologies:</p>
+            <ul>
+                <li><strong>Python:</strong> Primary programming language for data analysis and machine learning.</li>
+                <li><strong>Scikit-learn:</strong> For implementing machine learning models.</li>
+                <li><strong>Pandas & NumPy:</strong> For data preprocessing and analysis.</li>
+                <li><strong>TensorFlow:</strong> For advanced deep learning models (if applicable).</li>
+                <li><strong>Flask:</strong> For building a simple web interface to showcase the predictions.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Model Details</h2>
+        <div class="section-content">
+            <p>The project employs a range of machine learning models to predict obesity:</p>
+            <ul>
+                <li><strong>Decision Trees:</strong> Easy to interpret and visualize, suitable for simple decision-making tasks.</li>
+                <li><strong>Random Forests:</strong> Ensemble method that combines multiple decision trees for better accuracy.</li>
+                <li><strong>Neural Networks:</strong> Deep learning model that can learn complex patterns in the data.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Results & Accuracy</h2>
+        <div class="section-content">
+            <p>The performance of the models is evaluated using several metrics:</p>
+            <ul>
+                <li><strong>Accuracy:</strong> The percentage of correctly predicted instances.</li>
+                <li><strong>Precision:</strong> The ratio of true positive predictions to all positive predictions made by the model.</li>
+                <li><strong>Recall:</strong> The ratio of true positive predictions to all actual positives in the data.</li>
+                <li><strong>F1-score:</strong> The harmonic mean of precision and recall.</li>
+                <li><strong>ROC-AUC:</strong> The area under the Receiver Operating Characteristic curve, which shows the model's ability to distinguish between classes.</li>
+            </ul>
+            <p>The models showed a promising accuracy of 85%, with improvements possible through hyperparameter tuning.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Conclusion</h2>
+        <div class="section-content">
+            <p>This project demonstrates the potential of machine learning models in predicting obesity levels based on various health and lifestyle factors. Future work may focus on incorporating more diverse data sources, improving model accuracy, and developing a fully integrated application for users to track their health.</p>
+        </div>
+    </section>
+
+   
+</body>
+</html>
+
+{% endblock %}

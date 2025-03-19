@@ -1,0 +1,410 @@
+{% extends "base.html" %}
+{% block content %}
+   
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Obesity Risk Predictor - Home</title>
+  <style>
+    /* Global Styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f7fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+ 
+
+.container1 {
+    max-width: 900px;
+    margin: 20px auto;
+    background: white;
+    padding: 60px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+h1{
+    color: #eaf3ea;
+    font-size: 2rem;  
+}
+h2 {
+    color: #1f771f;
+    font-size: 2rem;
+}
+h3{
+    font-size: 3rem;  
+    color: #1d7a41;
+        }
+
+.scientific-support {
+    font-size: 1rem;
+    color: #555;
+}
+
+.content {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.text {
+    flex: 2;
+    color: #333;
+}
+
+.text strong {
+    color: #006600;
+}
+
+.image {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+
+    header {
+      background-color:  #208820;
+      padding: 40px;
+      text-align: center;
+      color: white;
+      border-bottom: 2px solid #005bb5;
+    }
+  
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+  
+    header p {
+      font-size: 1.2rem;
+      font-weight: lighter;
+    }
+  
+    /* Container for Main Content */
+    .container {
+      max-width: 1200px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+  p{
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #242725;
+    }
+   
+  
+    .head{
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #faefef;
+    }
+  
+    .content-section {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+  
+    .content-text {
+      width: 48%;
+    }
+  
+    .content-image-container {
+      width: 48%;
+    }
+  
+    .content-image {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+  
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+  
+    li {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+  
+    li strong {
+      color: #0066cc;
+    }
+  
+    /* Call to Action (CTA) Button */
+    .cta-button {
+      background-color: #0066cc;
+      color: white;
+      font-size: 1.2rem;
+      padding: 15px 30px;
+      text-align: center;
+      border-radius: 5px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 20px;
+      transition: background-color 0.3s ease;
+    }
+  
+    .cta-button:hover {
+      background-color:#006600;
+    }
+  
+    /* Info Box for Health Risks */
+    .info-box {
+      background-color: #1ce715;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 40px;
+      color: white;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+  
+    .info-box h3 {
+      margin-bottom: 15px;
+      font-size: 1.8rem;
+    }
+  
+    .info-box ul {
+      padding-left: 20px;
+    }
+  
+    /* Navigation Bar */
+    .nav-bar {
+      background-color: #e9ecf0;
+      padding: 15px;
+      text-align: center;
+      margin-top: 50px;
+      border-top: 2px solid #7c838a;
+    }
+  
+    .nav-bar a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.2rem;
+      padding: 10px 20px;
+      margin: 0 15px;
+      transition: background-color 0.3s ease;
+    }
+  
+    .nav-bar a:hover {
+      background-color: #2f912f;
+      border-radius: 5px;
+    }.heading {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+thead th {
+    background-color: #2f912f;
+    color: white;
+    text-align: left;
+    padding: 10px;
+}
+
+tbody td, thead th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+tbody td {
+    text-align: left;
+}
+
+.factors-list {
+    list-style-type: disc;
+    margin: 0;
+    padding-left: 20px;
+    color: #333;
+}
+
+.factors-list li {
+    margin-bottom: 10px;
+}
+
+.factors-list ul {
+    list-style-type: circle;
+    margin-top: 10px;
+    padding-left: 20px;
+}
+  
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #333;
+      color: white;
+      font-size: 1rem;
+    }
+  </style>
+  
+</head>
+<body>
+
+<header>
+  <h1>Obesity Risk Prediction</h1>
+  <p class="head">Understand your obesity risk and make informed decisions for a healthier life.</p>
+</header>
+
+ <div class="container1">
+    <h2>What is obesity?</h2>
+    <p class="scientific-support">Scientific support: <strong>Theresa Kössler</strong></p>
+    <div class="content">
+        <div class="text">
+            <p>Obesity is a term to describe being severely overweight. Obesity is also referred to as adiposity.</p>
+            <p>Obesity is not only a cosmetic issue, but rather a chronic disease that can be accompanied by serious health problems. For example, it is a risk factor for the onset of <strong>type 2 diabetes</strong>, cardiovascular disease, and certain types of cancer.</p>
+            <p>In Germany, 67 percent of men and 53 percent of women are overweight. Roughly one-quarter of them are considered obese.</p>
+        </div>
+        <div class="image">
+            <img src="https://www.diabinfo.de/fileadmin/diabinfo/Vorbeugen/Faktencheck/AdobeStock_429972777_web.jpg" alt="Doctor consulting a patient">
+        </div>
+
+ 
+    </div>
+    <h2> How does obesity develop?</h2>
+    <p>Obesity develops when energy intake is greater than energy expenditure. This is usually the result of too much food and not enough physical activity. In the long term, even a small imbalance between energy intake and expenditure can result in weight gain and eventually obesity.
+
+      Alongside lifestyle, genetic and psychological factors play an important role in the onset of obesity.
+      
+      </p>
+<h2>What increases the risk of obesity?</h2>
+<div class="image">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStbOAsXTjcbPnJ155hRe-nxN8U72TjJDhUfg&s" alt="risk of obesity" height="500px" width="500px">
+</div>
+
+<p class="heading">A number of factors can facilitate the development of obesity:</p>
+<ul class="factors-list">
+    <li>High incidence of obesity in the family</li>
+    <li>
+        Unhealthy lifestyle
+        <ul>
+            <li>Lack of physical exercise</li>
+            <li>Eating large portions and the constant availability of high-energy foods</li>
+            <li>High-calorie foods</li>
+            <li>A low-fiber and/or high-fat diet</li>
+        </ul>
+    </li>
+    <li>Stress, depression, and lack of sleep</li>
+    <li>Eating disorders</li>
+    <li>Metabolic diseases (for example, hypothyroidism or Cushing's syndrome)</li>
+    <li>
+        Medications that can affect body weight (for example, cortisone and some drugs used to treat depression, high blood pressure, or diabetes)
+    </li>
+</ul>
+<h2> How is obesity diagnosed?</h2>
+
+<p>The body mass index (BMI) is a measure to assess body weight in relation to height. The result is obtained by dividing body weight (kg) by height squared (in m²).
+
+    A BMI between 18.5 and 24.9 kg/m² is considered normal. A BMI of 25 kg/m² or above is considered overweight. Someone is considered obese when their BMI is 30 kg/m² or above.</p>
+  
+  <p class="heading">Good to know:</p>
+   <p>The formula to calculate the body mass index (BMI):
+    
+    BMI = body weight (kg) : height squared (m²)</p>
+      
+
+    <body>
+      <h3>The greater the BMI, the greater the risk of developing other diseases.</h3>
+      <table>
+          <thead>
+              <tr>
+                  <th>Classification</th>
+                  <th>Body Mass Index (BMI) [kg/m²]</th>
+                  <th>Risk of Complications</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>Underweight</td>
+                  <td>Below 18.5</td>
+                  <td>Low</td>
+              </tr>
+              <tr>
+                  <td>Normal weight</td>
+                  <td>18.5 to 24.9</td>
+                  <td>Average</td>
+              </tr>
+              <tr>
+                  <td>Overweight</td>
+                  <td>25 to 29.9</td>
+                  <td>Slight increase</td>
+              </tr>
+              <tr>
+                  <td>Obesity</td>
+                  <td>Above 30</td>
+                  <td></td>
+              </tr>
+              <tr>
+                  <td>Class 1</td>
+                  <td>30 to 34.9</td>
+                  <td>Increased</td>
+              </tr>
+              <tr>
+                  <td>Class 2</td>
+                  <td>35 to 39.9</td>
+                  <td>High</td>
+              </tr>
+              <tr>
+                  <td>Class 3</td>
+                  <td>Above 40</td>
+                  <td>Very high</td>
+              </tr>
+          </tbody>
+      </table>
+
+<p>However, body weight is not the only decisive factor for the risk of developing complications. The distribution of fat in the body also plays an important role. A high accumulation of abdominal fat is associated with a higher health risk. The amount of abdominal fat can be determined by measuring the circumference of the waist.
+</p>
+  <li>There is a significantly elevated risk of metabolic and cardiovascular diseases
+  
+  in women with a waist circumference of 88 centimeters or more
+  and men with a waist circumference of 102 centimeters or more.</li>
+ 
+
+
+   
+</div>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+{% endblock %}

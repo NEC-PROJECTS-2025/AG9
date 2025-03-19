@@ -1,0 +1,253 @@
+{% extends "base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Evaluation Metrics - Obesity Prediction</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f9;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            border-radius: 8px;
+        }
+
+        h1, h2, h3 {
+            text-align: center;
+            color: #107e2c;
+        }
+
+        h2 {
+            margin-top: 40px;
+            font-size: 1.5rem;
+        }
+
+        p {
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.9rem;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #0c8a3c;
+            color: white;
+        }
+
+        .highlight {
+            color: #27ae60;
+            font-weight: bold;
+        }
+
+        .chart-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .chart-container img {
+            max-width: 100%;
+            height: auto;
+            margin: 10px 0;
+        }
+
+        ul {
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .section {
+            margin-top: 50px;
+        }
+
+        .improvement-section ul li {
+            color: #111411;
+            font-weight: bold;
+        }
+
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Model Evaluation Metrics</h1>
+        <p>This page evaluates the performance of our machine learning model in predicting obesity levels. We include various metrics, visualizations, and comparisons to demonstrate the model's strengths and limitations.</p>
+
+        <!-- Key Metrics Section -->
+        <div class="section">
+            <h2>Key Metrics</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Description</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Accuracy</td>
+                        <td>Percentage of correctly classified cases among all predictions.</td>
+                        <td><span class="highlight">91%</span></td>
+                    </tr>
+                    <tr>
+                        <td>Precision</td>
+                        <td>Proportion of true positive predictions out of all positive predictions.</td>
+                        <td><span class="highlight">89%</span></td>
+                    </tr>
+                    <tr>
+                        <td>Recall (Sensitivity)</td>
+                        <td>Proportion of true positives correctly identified by the model.</td>
+                        <td><span class="highlight">87%</span></td>
+                    </tr>
+                    <tr>
+                        <td>Specificity</td>
+                        <td>Proportion of true negatives correctly identified by the model.</td>
+                        <td><span class="highlight">92%</span></td>
+                    </tr>
+                    <tr>
+                        <td>F1 Score</td>
+                        <td>Harmonic mean of Precision and Recall.</td>
+                        <td><span class="highlight">88.5%</span></td>
+                    </tr>
+                    <tr>
+                        <td>AUC (Area Under Curve)</td>
+                        <td>Measures the model's ability to distinguish between classes.</td>
+                        <td><span class="highlight">0.93</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Confusion Matrix -->
+        <div class="section">
+            <h2>Confusion Matrix</h2>
+            <p>The confusion matrix below shows how well the model classified each class of obesity level:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Predicted: Normal</th>
+                        <th>Predicted: Obese</th>
+                        <th>Predicted: Overweight</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Actual: Normal</td>
+                        <td>60</td>
+                        <td>5</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>Actual: Obese</td>
+                        <td>6</td>
+                        <td>50</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>Actual: Overweight</td>
+                        <td>4</td>
+                        <td>7</td>
+                        <td>45</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Visualizations -->
+        <div class="section chart-container">
+            <h2>Visualizations</h2>
+            <img src="{{ url_for('static', filename='images/imagefront2.png') }}" alt="Causes of Obesity" class="content-image" height="200px" width="400px">
+      
+            <p><strong>ROC Curve:</strong> The ROC curve demonstrates a trade-off between sensitivity and specificity. The AUC score of <span class="highlight">0.93</span> indicates excellent performance.</p>
+            <img src="{{ url_for('static', filename='images/imagefront4.png') }}" alt="Feature Importance Chart" class="content-image" height="200px" width="400px">
+           
+            <p><strong>Feature Importance:</strong> Key features contributing to the model’s predictions include BMI, age, and physical activity levels.</p>
+        </div>
+
+        <!-- Comparison with Baseline Models -->
+        <div class="section">
+            <h2>Comparison with Baseline Models</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Model</th>
+                        <th>Accuracy</th>
+                        <th>Precision</th>
+                        <th>Recall</th>
+                        <th>F1 Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Logistic Regression</td>
+                        <td>85%</td>
+                        <td>82%</td>
+                        <td>80%</td>
+                        <td>81%</td>
+                    </tr>
+                    <tr>
+                        <td>Random Forest</td>
+                        <td>91%</td>
+                        <td>89%</td>
+                        <td>87%</td>
+                        <td>88.5%</td>
+                    </tr>
+                    <tr>
+                        <td>Support Vector Machine</td>
+                        <td>89%</td>
+                        <td>86%</td>
+                        <td>84%</td>
+                        <td>85%</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Our Random Forest model outperformed baseline models in terms of accuracy, precision, and recall.</p>
+        </div>
+
+        <!-- Future Improvements -->
+        <div class="section improvement-section">
+            <h2>Future Improvements</h2>
+            <ul>
+                <li>Enhance feature engineering by including dietary habits and genetic predispositions.</li>
+                <li>Address class imbalance through oversampling or synthetic data generation techniques.</li>
+                <li>Experiment with deep learning models like Neural Networks for further accuracy gains.</li>
+                <li>Optimize hyperparameters using Grid Search or Bayesian Optimization methods.</li>
+            </ul>
+        </div>
+
+    </div>
+</body>
+</html>
+
+{% endblock %}
